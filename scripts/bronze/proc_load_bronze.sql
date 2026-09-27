@@ -3,20 +3,27 @@
 Stored Procedure: Load Bronze Layer (Source -> Bronze) in Snowflake
 ===============================================================================
 Script Purpose:
-    This stored procedure loads data into the 'bronze' schema from external CSV files. 
-    It performs the following actions:
+    This stored procedure loads data into the 'bronze' schema from external
+    CSV files staged in @bronze.my_stage. It performs the following actions:
     - Truncates the bronze tables before loading data.
-    - Uses the `BULK INSERT` command to load data from csv Files to bronze tables.
+    - Uses the `COPY INTO` command to load data from CSV files into bronze
+      tables (Snowflake's equivalent of SQL Server's BULK INSERT).
+    - Logs each step and timing into a returned STRING (Snowflake has no
+      PRINT statement for stored procedures).
+    - Catches and reports any error via the EXCEPTION block.
 
 Parameters:
-    None. 
-	  This stored procedure does not accept any parameters or return any values.
+    None.
+    This stored procedure accepts no parameters.
+
+Returns:
+    STRING - a full text log of the load run, or an error report if the
+    run failed.
 
 Usage Example:
     CALL bronze.load_bronze();
 ===============================================================================
 */
-
 
 CREATE OR REPLACE PROCEDURE bronze.load_bronze()
 RETURNS STRING
@@ -51,12 +58,12 @@ BEGIN
     log_msg := log_msg || '>> Load Duration: ' || DATEDIFF('second', start_time, end_time) || ' seconds\n';
     log_msg := log_msg || '>> -------------\n';
 
-    -- erp_prd_info
+    -- crm_prd_info
     start_time := CURRENT_TIMESTAMP();
-    log_msg := log_msg || '>> Truncating Table: bronze.erp_prd_info\n';
-    TRUNCATE TABLE IF EXISTS bronze.erp_prd_info;
-    log_msg := log_msg || '>> Inserting Data Into: bronze.erp_prd_info\n';
-    COPY INTO bronze.erp_prd_info
+    log_msg := log_msg || '>> Truncating Table: bronze.crm_prd_info\n';
+    TRUNCATE TABLE IF EXISTS bronze.crm_prd_info;
+    log_msg := log_msg || '>> Inserting Data Into: bronze.crm_prd_info\n';
+    COPY INTO bronze.crm_prd_info
         FROM @bronze.my_stage/prd_info.csv
         FILE_FORMAT = (TYPE = CSV FIELD_OPTIONALLY_ENCLOSED_BY = '"' SKIP_HEADER = 1);
     end_time := CURRENT_TIMESTAMP();
@@ -103,12 +110,12 @@ BEGIN
     log_msg := log_msg || '>> Load Duration: ' || DATEDIFF('second', start_time, end_time) || ' seconds\n';
     log_msg := log_msg || '>> -------------\n';
 
-    -- crm_px_cat_g1v2
+    -- erp_px_cat_g1v2
     start_time := CURRENT_TIMESTAMP();
-    log_msg := log_msg || '>> Truncating Table: bronze.crm_px_cat_g1v2\n';
-    TRUNCATE TABLE IF EXISTS bronze.crm_px_cat_g1v2;
-    log_msg := log_msg || '>> Inserting Data Into: bronze.crm_px_cat_g1v2\n';
-    COPY INTO bronze.crm_px_cat_g1v2
+    log_msg := log_msg || '>> Truncating Table: bronze.erp_px_cat_g1v2\n';
+    TRUNCATE TABLE IF EXISTS bronze.erp_px_cat_g1v2;
+    log_msg := log_msg || '>> Inserting Data Into: bronze.erp_px_cat_g1v2\n';
+    COPY INTO bronze.erp_px_cat_g1v2
         FROM @bronze.my_stage/px_cat_g1v2.csv
         FILE_FORMAT = (TYPE = CSV FIELD_OPTIONALLY_ENCLOSED_BY = '"' SKIP_HEADER = 1);
     end_time := CURRENT_TIMESTAMP();
@@ -133,3 +140,4 @@ EXCEPTION
                '==========================================\n';
 END;
 $$;
+
