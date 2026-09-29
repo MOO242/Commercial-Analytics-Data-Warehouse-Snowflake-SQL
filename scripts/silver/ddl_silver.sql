@@ -39,7 +39,7 @@ CREATE OR REPLACE TABLE silver.crm_cust_info (
 );
 
 -- CRM: Product master data
-CREATE OR REPLACE TABLE silver.crm_prd_info (
+CREATE OR REPLACE TABLE silver.erp_prd_info (
     prd_id       INT,
     prd_key      VARCHAR(50),
     prd_nm       VARCHAR(50),
@@ -80,7 +80,7 @@ CREATE OR REPLACE TABLE silver.erp_cust_az12 (
 );
 
 -- ERP: Product category, subcategory, maintenance info
-CREATE OR REPLACE TABLE silver.erp_px_cat_g1v2 (
+CREATE OR REPLACE TABLE silver.crm_px_cat_g1v2 (
     id          VARCHAR(50),
     cat         VARCHAR(50),
     subcat      VARCHAR(50),
