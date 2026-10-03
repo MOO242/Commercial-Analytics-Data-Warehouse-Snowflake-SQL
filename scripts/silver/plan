@@ -1,0 +1,18 @@
+BRONZE
+   │
+   │  Raw source data
+   ▼
+load_silver()
+   │
+   ├── Deduplication
+   ├── String standardization
+   ├── Date validation
+   ├── Missing value handling
+   ├── Business rule normalization
+   ├── Derived attributes
+   └── Operational logging
+   │
+   ▼
+SILVER
+   │
+   └── Cleaned & standardized data
