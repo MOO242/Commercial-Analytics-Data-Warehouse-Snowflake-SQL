@@ -27,23 +27,28 @@ This project builds a complete analytics solution on **Snowflake**: from loading
 
 The warehouse follows the **Medallion Architecture**, with **Bronze**, **Silver**, and **Gold** layers:
 
-https://github.com/MOO242/Commercial-Analytics-Data-Warehouse-Snowflake-SQL/blob/main/data_architecture.png
+![Data Architecture](data_architecture.png)
 
 ```
-CSV (CRM + ERP) ──► Snowflake Stage ──► BRONZE ──► SILVER ──► GOLD ──► SQL Analytics / BI
-                     PUT + COPY INTO     raw        clean      star schema
+CSV (CRM + ERP) ──► Snowflake Internal Stage ──► BRONZE ──► SILVER ──► GOLD ──► SQL Analytics / BI
+                      PUT + COPY INTO              raw        clean     star schema
 ```
 
-1. **Bronze Layer**: Raw data stored as-is from the source systems. CSV files are loaded into Snowflake through an internal stage with `COPY INTO`.
-2. **Silver Layer**: Cleansing, standardization, and normalization, including trimming, decoding codes to readable values, deduplicating with `QUALIFY ROW_NUMBER()`, fixing invalid dates, and deriving product end dates with `LEAD()`.
+1. **Bronze Layer**: Raw data stored as-is from the source systems. CSV files are loaded into Snowflake through an internal stage with `PUT` and `COPY INTO`, orchestrated by `CALL bronze.load_bronze()`.
+2. **Silver Layer**: Cleansing, standardization, and normalization, orchestrated by `CALL silver.load_silver()`. This includes:
+   - trimming and standardizing text
+   - decoding codes into readable values
+   - deduplicating with `QUALIFY ROW_NUMBER()`
+   - fixing invalid dates with `TRY_TO_DATE`
+   - deriving product end dates with `LEAD()`
 3. **Gold Layer**: Business-ready star schema views with surrogate keys, ready for reporting and analytics.
 
 ### Snowflake features used
 
 - Warehouse, database, schemas, and internal stages (Snowsight + Snowflake CLI)
 - `PUT` and `COPY INTO` for file loading
-- Snowflake Scripting stored procedures (`CALL bronze.load_bronze()`, `CALL silver.load_silver()`) with `SYSTEM$LOG_INFO` logging
-- `QUALIFY`, `TRY_TO_DATE`, `CREATE OR REPLACE VIEW`
+- Snowflake Scripting stored procedures with `SYSTEM$LOG_INFO` logging
+- `QUALIFY`, `TRY_TO_DATE`, `LEAD()`, `CREATE OR REPLACE VIEW`
 
 ---
 
