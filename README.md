@@ -1,10 +1,9 @@
-<img width="4032" height="404" alt="image" src="https://github.com/user-attachments/assets/11f23e49-0c50-4ce3-99ee-9ad93a3d4a68" /># Commercial Analytics Data Warehouse | Snowflake + SQL
+# Commercial Analytics Data Warehouse | Snowflake + SQL
 
 Welcome to the **Commercial Analytics Data Warehouse** repository! 🚀
 This project builds a complete analytics solution on **Snowflake**: from loading raw CRM and ERP data, through a Medallion data warehouse, to exploratory and advanced SQL analytics that answer real business questions about customers, products, and sales.
 
-> 📚![Uploading image.png…]()
-
+> 📚 Based on the SQL Data Warehouse, SQL EDA, and SQL Data Analytics projects by Data With Baraa, rebuilt and adapted for **Snowflake**.
 > 
 
 ---
@@ -181,4 +180,4 @@ Project design and source datasets by **Baraa Khatib Salkini** (Data With Baraa)
 
 ## 🛡️ License
 
-This project is licensed under the [MIT](https://github.com/MOO242/Commercial-Analytics-Data-Warehouse-Snowflake-SQL/tree/main?tab=MIT-1-ov-file#)  License. You are free to use, modify, and share this project with proper attribution.
+This project is licensed under the MIT License. You are free to use, modify, and share this project with proper attribution.
