@@ -3,7 +3,7 @@
 Welcome to the **Commercial Analytics Data Warehouse** repository! 🚀
 This project builds a complete analytics solution on **Snowflake**: from loading raw CRM and ERP data, through a Medallion data warehouse, to exploratory and advanced SQL analytics that answer real business questions about customers, products, and sales.
 
-> 📚 Based on the SQL Data Warehouse, SQL EDA, and SQL Data Analytics projects by https://www.youtube.com/@DataWithBaraa, rebuilt and adapted for **Snowflake**.
+> 📚 Based on the SQL Data Warehouse, SQL EDA, and SQL Data Analytics projects by [Data With Baraa]https://www.youtube.com/@DataWithBaraa, rebuilt and adapted for **Snowflake**.
 > 
 
 ---
