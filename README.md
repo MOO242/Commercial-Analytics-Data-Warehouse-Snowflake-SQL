@@ -151,14 +151,15 @@ Commercial-Analytics-Data-Warehouse-Snowflake-SQL/
 │   ├── gold/                           # Star schema views (dimensions and fact)
 │   ├── eda/                            # Exploratory data analysis on the Gold layer
 │   │   └── 01_eda_gold_layer.sql
-│   └── analytics/                      # Advanced analytics and reporting views
-│       ├── 01_change_over_time.sql
-│       ├── 02_cumulative_analysis.sql
-│       ├── 03_performance_analysis.sql
-│       ├── 04_part_to_whole.sql
-│       ├── 05_data_segmentation.sql
-│       ├── 06_report_customers.sql
-│       └── 07_report_products.sql
+│   └── analytics/
+|       └── 01_advanced_analytics.sql        # Advanced analytics and reporting views
+│       
+│      
+│       
+│       
+│       
+│       
+│      
 │
 ├── tests/                              # Data quality checks (Silver and Gold)
 │
