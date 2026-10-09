@@ -154,7 +154,7 @@ Commercial-Analytics-Data-Warehouse-Snowflake-SQL/
         └──02_quality_checks_silver.sql                                             
 │   ├── eda/                            # Exploratory data analysis on the Gold layer
 │   │   └── 01_eda_gold_layer.sql
-│   └── analytics/
+│   └── advanced analytics/
 |       └── 01_advanced_analytics.sql        # Advanced analytics and reporting views
 │       
 │      
