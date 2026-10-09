@@ -180,4 +180,4 @@ Project design and source datasets by **Baraa Khatib Salkini** (Data With Baraa)
 
 ## 🛡️ License
 
-This project is licensed under the MIT License. You are free to use, modify, and share this project with proper attribution.
+This project is licensed under the [MIT](https://github.com/MOO242/Commercial-Analytics-Data-Warehouse-Snowflake-SQL/tree/main?tab=MIT-1-ov-file#)  License. You are free to use, modify, and share this project with proper attribution.
