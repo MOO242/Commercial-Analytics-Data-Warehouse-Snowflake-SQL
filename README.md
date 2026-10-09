@@ -27,6 +27,8 @@ This project builds a complete analytics solution on **Snowflake**: from loading
 
 The warehouse follows the **Medallion Architecture**, with **Bronze**, **Silver**, and **Gold** layers:
 
+https://github.com/MOO242/Commercial-Analytics-Data-Warehouse-Snowflake-SQL/blob/main/data_architecture.png
+
 ```
 CSV (CRM + ERP) ──► Snowflake Stage ──► BRONZE ──► SILVER ──► GOLD ──► SQL Analytics / BI
                      PUT + COPY INTO     raw        clean      star schema
