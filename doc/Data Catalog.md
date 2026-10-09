@@ -1,4 +1,4 @@
-# ata Catalog: Gold Layer (Snowflake)
+# Data Catalog: Gold Layer (Snowflake)
 
 ## Overview
 
