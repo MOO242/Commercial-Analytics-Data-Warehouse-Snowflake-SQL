@@ -148,7 +148,10 @@ Commercial-Analytics-Data-Warehouse-Snowflake-SQL/
 │   ├── init_database.sql               # Warehouse, database, schemas, and stages
 │   ├── bronze/                         # DDL + load_bronze() procedure for raw data
 │   ├── silver/                         # DDL + load_silver() procedure for cleansing and transformation
-│   ├── gold/                           # Star schema views (dimensions and fact)
+│   ├── gold/                           # Star schema views (dimensions and fact)   
+|   |── tests/
+        └── 01_quality_checks_gold.sql  # Data quality checks (Silver and Gold) 
+        └──02_quality_checks_silver.sql                                             
 │   ├── eda/                            # Exploratory data analysis on the Gold layer
 │   │   └── 01_eda_gold_layer.sql
 │   └── analytics/
@@ -161,7 +164,7 @@ Commercial-Analytics-Data-Warehouse-Snowflake-SQL/
 │       
 │      
 │
-├── tests/                              # Data quality checks (Silver and Gold)
+|                               
 │
 ├── README.md                           # Project overview and instructions
 └── LICENSE                             # License information for the repository
