@@ -18,8 +18,8 @@ This project builds a complete analytics solution on **Snowflake**: from loading
 | 4. Gold Layer | Star schema views: `dim_customers`, `dim_products`, `fact_sales` | ✅ Done |
 | 5. Data Quality | Gold checks: key uniqueness, grain, referential integrity | ✅ Done |
 | 6. Exploratory Data Analysis | Database, dimensions, dates, measures, magnitude, and ranking | ✅ Done |
-| 7. Advanced Analytics | Trends, cumulative, performance, part-to-whole, segmentation | 🔄 In progress |
-| 8. Reporting Views | `gold.report_customers`, `gold.report_products` | 🔄 In progress |
+| 7. Advanced Analytics | Trends, cumulative, performance, part-to-whole, segmentation |✅ Done |
+| 8. Reporting Views | `gold.report_customers`, `gold.report_products` | ✅ Done |
 
 ---
 
