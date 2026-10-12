@@ -115,7 +115,7 @@ These insights give stakeholders the key business metrics they need for strategi
 | Magnitude Analysis | How do customers and revenue split by country, gender, and category? |
 | Ranking Analysis | Who are the top and bottom products and customers? (`ROW_NUMBER`, `RANK`, `DENSE_RANK`) |
 
-#### 🔄 Advanced Analytics (in progress)
+#### ✅ Advanced Analytics (completed)
 
 | Analysis | Business Question | Key SQL |
 | --- | --- | --- |
